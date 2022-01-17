@@ -15,14 +15,15 @@ echo "Starting linux kernel build"
 # make allmodconfig
 # Building the kernel. A bug makes the build stop randomly with clang, so we start it
 # again if it is not finished. However, this will loop if there is an actual error.
+touch log.txt
 while [ ! -e "vmlinux" ]; do
-    make -j`nproc` vmlinux CC=gclang
+    make -j`nproc` vmlinux CC=gclang V=1 >> log.txt
 done
 
 echo "[*] Linux kernel built successfully!"
 
 # The python script will extract the bitcode to the specified folder and link it all in a new vmlinux object
-# It needs the gclang log to be forwarded to this specific path. It can be changed in the python code. 
+# It needs the gclang log to be forwarded to this specific path. It can be changed in the python code.
 mkdir wrapper-logs
 export WLLVM_OUTPUT_FILE=wrapper-logs/wrapper.log
 mkdir ../bitcode-build-full-link

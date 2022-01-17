@@ -3,14 +3,14 @@
 # install essential packages
 sudo apt-get update
 sudo apt-get install -y dbus-x11 libgmp-dev libelf-dev
-sudo apt-get install -y build-essential vim curl bison flex bc libcap-dev git cmake libboost-all-dev libncurses5-dev python-minimal python-pip unzip 
+sudo apt-get install -y build-essential vim curl bison flex bc libcap-dev git cmake libboost-all-dev libncurses5-dev python-minimal python-pip unzip
 sudo apt-get install -y git subversion wget libprotobuf-dev python-protobuf protobuf-compiler libboost-all-dev
-sudo apt-get install -y llvm-5.0 libclang-5.0-dev clang-5.0 tree 
+sudo apt-get install -y llvm-5.0 libclang-5.0-dev clang-5.0 tree
 sudo apt-get install -y python-pip
-sudo apt-get install libssl-dev
-sudo apt-get install libelf-dev
-sudo apt-get install libgtk-3-dev
-sudo apt-get install libncurses5-dev libncursesw5-dev
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y libelf-dev
+sudo apt-get install -y libgtk-3-dev
+sudo apt-get install -y libncurses5-dev libncursesw5-dev
 
 # rename llvm packages
 sudo cp /usr/bin/clang-5.0 /usr/bin/clang
